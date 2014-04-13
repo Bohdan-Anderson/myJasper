@@ -29,7 +29,9 @@ def compile():
     words = list(set(words))
 
     # for spotify module
-    words.extend(["MUSIC","SPOTIFY"])
+    # words.extend(["MUSIC","SPOTIFY"])
+    print words
+    exit()
 
     # create the dictionary
     pronounced = g2p.translateWords(words)
