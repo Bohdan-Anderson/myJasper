@@ -1,0 +1,21 @@
+2014-04-11 23:48:12,702 ERROR Failed to execute module
+Traceback (most recent call last):
+  File "/home/pi/jasper/client/brain.py", line 46, in query
+    module.handle(text, self.mic, self.profile)
+  File "/home/pi/jasper/client/modules/HN.py", line 111, in handle
+    if profile['phone_number']:
+KeyError: 'phone_number'
+2014-04-11 23:49:40,579 ERROR Failed to execute module
+Traceback (most recent call last):
+  File "/home/pi/jasper/client/brain.py", line 46, in query
+    module.handle(text, self.mic, self.profile)
+  File "/home/pi/jasper/client/modules/HN.py", line 111, in handle
+    if profile['phone_number']:
+KeyError: 'phone_number'
+2014-04-11 23:49:40,579 ERROR Failed to execute module
+Traceback (most recent call last):
+  File "/home/pi/jasper/client/brain.py", line 46, in query
+    module.handle(text, self.mic, self.profile)
+  File "/home/pi/jasper/client/modules/HN.py", line 111, in handle
+    if profile['phone_number']:
+KeyError: 'phone_number'
