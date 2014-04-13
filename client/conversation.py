@@ -27,21 +27,24 @@ class Conversation(object):
 
     def handleForever(self):
         """Delegates user input to the handling function when activated."""
-        while True:
+        try:
+            while True:
 
-            # Print notifications until empty
-            notifications = self.notifier.getAllNotifications()
-            for notif in notifications:
-                print notif
+                # Print notifications until empty
+                notifications = self.notifier.getAllNotifications()
+                for notif in notifications:
+                    print notif
 
-            try:
-                threshold, transcribed = self.mic.passiveListen(self.persona)
-            except:
-                continue
+                try:
+                    threshold, transcribed = self.mic.passiveListen(self.persona)
+                except:
+                    continue
 
-            if threshold:
-                input = self.mic.activeListen(threshold)
-                if input:
-                    self.delegateInput(input)
-                else:
-                    self.mic.say("Pardon?")
+                if threshold:
+                    input = self.mic.activeListen(threshold)
+                    if input:
+                        self.delegateInput(input)
+                    else:
+                        self.mic.say("Pardon?")
+        except KeyboardInterrupt:
+            exit()
