@@ -30,8 +30,7 @@ def compile():
 
     # for spotify module
     # words.extend(["MUSIC","SPOTIFY"])
-    print words
-    exit()
+    words.extend(["EXIT","QUIT"])
 
     # create the dictionary
     pronounced = g2p.translateWords(words)

@@ -15,6 +15,7 @@ def configure():
     try:
 
         urllib2.urlopen("http://www.google.com").getcode()
+        say("Internet connected")
 
         print "CONNECTED TO INTERNET"
         print "COMPILING DICTIONARY"

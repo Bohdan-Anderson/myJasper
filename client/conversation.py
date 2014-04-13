@@ -10,7 +10,7 @@ class Conversation(object):
         self.mic = mic
         self.profile = profile
         self.brain = Brain(mic, profile)
-        self.notifier = Notifier(profile)
+        # self.notifier = Notifier(profile)
 
     def delegateInput(self, text):
         """A wrapper for querying brain."""
@@ -22,7 +22,8 @@ class Conversation(object):
         #     music_mode = MusicMode(self.persona, self.mic)
         #     music_mode.handleForever()
         #     return
-
+        if any(x in text.upper() for x in ["EXIT","QUIT"]):
+            exit()
 
         self.brain.query(text)
 
@@ -31,9 +32,9 @@ class Conversation(object):
         while True:
 
             # Print notifications until empty
-            notifications = self.notifier.getAllNotifications()
-            for notif in notifications:
-                print notif
+            # notifications = self.notifier.getAllNotifications()
+            # for notif in notifications:
+            #     print notif
 
             try:
                 threshold, transcribed = self.mic.passiveListen(self.persona)
@@ -44,6 +45,8 @@ class Conversation(object):
                 input = self.mic.activeListen(threshold)
                 if input:
                     self.delegateInput(input)
+                    if any(x in input.upper() for x in ["EXIT","QUIT"]):
+                        break
                 else:
                     self.mic.say("Pardon?")
-
+        exit()

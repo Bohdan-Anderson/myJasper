@@ -13,11 +13,6 @@ else:
 
 if __name__ == "__main__":
 
-    print "==========================================================="
-    print " JASPER The Talking Computer                               "
-    print " Copyright 2013 Shubhro Saha & Charlie Marsh               "
-    print "==========================================================="
-
     profile = yaml.safe_load(open("profile.yml", "r"))
 
     mic = Mic("languagemodel.lm", "dictionary.dic",
